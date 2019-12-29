@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <div class="container">
-      <the-nav class="text-centered" />
-      <router-view />
+      <the-nav class="has-text-centered" />
+      <div class="columns is-centered">
+        <div class="column is-5">
+          <router-view />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -23,5 +27,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $theme--color-secondary;
+}
+
+.container {
+  padding: 0 $theme--spacing-s;
 }
 </style>
