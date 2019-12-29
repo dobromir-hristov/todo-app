@@ -33,7 +33,6 @@ import RecycledTodoItem from '@/components/RecycledTodoItem'
 /**
  * @module RecycleBin
  */
-
 export default {
   name: 'RecycleBin',
   components: { RecycledTodoItem },
@@ -46,9 +45,16 @@ export default {
     this.fetchDeletedItems()
   },
   methods: {
+    /**
+     * Fetches the list of deleted todo items
+     */
     fetchDeletedItems () {
       this.deletedItems = ToDoService.fetchDeleted()
     },
+    /**
+     * Restores a todo item from the recycling bin
+     * @param {TodoItem} item
+     */
     restore (item) {
       item.deletedAt = null
       ToDoService.updateItem(item.id, item)

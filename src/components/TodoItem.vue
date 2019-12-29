@@ -26,13 +26,13 @@
         class="input"
         @keyup.enter="saveEdit"
         @blur="saveEdit"
-        @keyup.esc="cancelEdit"
+        @keyup.esc="stopEdit"
       >
     </template>
     <template #actions>
       <button
         class="TodoItem__delete delete has-background-danger"
-        @click.prevent="remove"
+        @click.prevent="deleteItem"
       >
         Remove
       </button>
@@ -53,6 +53,9 @@ export default {
   name: 'TodoItem',
   components: { BaseTodoItem },
   props: {
+    /**
+     *  @type TodoItem
+     */
     item: {
       type: Object,
       required: true
@@ -85,7 +88,10 @@ export default {
     }
   },
   methods: {
-    remove () {
+    /**
+     * Deletes a todo item
+     */
+    deleteItem () {
       this.emitChange({
         deletedAt: Date.now()
       })
@@ -100,22 +106,33 @@ export default {
         ...updatedItem
       })
     },
+    /**
+     * Starts the editing of a todo item.
+     * Focuses the input item immediately
+     * @return {Promise<void>}
+     */
     async enableEdit () {
       this.contentLocal = this.item.content
       this.isEditing = true
       await this.$nextTick()
       this.$refs.editInput.focus()
     },
+    /**
+     * Saves the editing changes.
+     * If no content is provided, just closes
+     */
     saveEdit () {
       if (this.contentLocal) {
         this.emitChange({
           content: this.contentLocal
         })
       }
-      this.isEditing = false
-      this.contentLocal = ''
+      this.stopEdit()
     },
-    cancelEdit () {
+    /**
+     * Stops the editing, without saving anything
+     */
+    stopEdit () {
       this.isEditing = false
       this.contentLocal = ''
     }
