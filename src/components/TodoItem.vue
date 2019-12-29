@@ -36,7 +36,7 @@
       >
         Remove
       </button>
-      <div class="button is-white is-small TodoItem__reorderHandle">
+      <div class="TodoItem__reorderHandle">
         <i class="fa fa-bars" />
       </div>
     </template>

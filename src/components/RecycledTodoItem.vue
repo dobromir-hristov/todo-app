@@ -45,3 +45,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.RecycledTodoItem .buttons {
+  flex-wrap: nowrap;
+}
+</style>

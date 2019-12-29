@@ -3,26 +3,22 @@
     class="BaseTodoItem"
     :class="{ 'BaseTodoItem--completed': item.completedAt }"
   >
-    <div class="columns is-vcentered is-mobile">
-      <div class="column is-narrow">
-        <slot name="checkbox">
-          <input
-            type="checkbox"
-            disabled
-            :checked="!!item.completedAt"
-          >
-        </slot>
-      </div>
-      <div class="column">
-        <slot name="content">
-          {{ item.content }}
-        </slot>
-      </div>
-      <div class="column is-narrow">
-        <div class="BaseTodoItem__actions">
-          <slot name="actions" />
-        </div>
-      </div>
+    <div class="BaseTodoItem__checkbox">
+      <slot name="checkbox">
+        <input
+          type="checkbox"
+          disabled
+          :checked="!!item.completedAt"
+        >
+      </slot>
+    </div>
+    <div class="BaseTodoItem__content">
+      <slot name="content">
+        {{ item.content }}
+      </slot>
+    </div>
+    <div class="BaseTodoItem__actions">
+      <slot name="actions" />
     </div>
   </div>
 </template>
@@ -43,9 +39,21 @@ export default {
 </script>
 <style lang="scss" scoped>
 .BaseTodoItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: $theme--spacing-m;
+  background: $theme--color-white;
+  padding: $theme--spacing-s;
+  border-radius: 5px;
+
   &--completed {
     text-decoration: line-through;
     opacity: .5;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    padding: 0 $theme--spacing-m;
   }
 
   &__actions {
