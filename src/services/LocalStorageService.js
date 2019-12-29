@@ -3,7 +3,7 @@ export const LocalStorageService = {
    * Get an item from LocalStorage
    * Allows saving any JSON data
    * @param {String} key - Key to retrieve data by
-   * @param {*} fallback - a fallback value if key is not found
+   * @param {*} [fallback] - a fallback value if key is not found
    * @return {*}
    */
   getItem (key, fallback) {

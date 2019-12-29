@@ -5,8 +5,8 @@ import { LocalStorageService } from './LocalStorageService'
  * @property {string} id - id of item
  * @property {string} content - content of todo item
  * @property {number} createdAt - time of creation
- * @property {!number} completedAt - time of completion
- * @property {!number} deletedAt - time of deletion
+ * @property {?number} completedAt - time of completion
+ * @property {?number} deletedAt - time of deletion
  */
 
 /**
@@ -16,6 +16,13 @@ import { LocalStorageService } from './LocalStorageService'
 export const STORAGE_KEY = 'todoItems'
 
 export const ToDoService = {
+  /**
+   * Stores all the provided todo items
+   * @param {TodoItem[]} items
+   */
+  storeAll (items) {
+    LocalStorageService.setItem(STORAGE_KEY, items)
+  },
   /**
    * Fetch all Todo items, even the deleted ones
    * @return {TodoItem[]}
@@ -45,6 +52,7 @@ export const ToDoService = {
   updateItem (itemId, payload) {
     const items = ToDoService.fetchAllWithDeleted()
     const index = items.findIndex(i => i.id === itemId)
+    if (index === -1) return
     items.splice(index, 1, payload)
     ToDoService.storeAll(items)
   },
@@ -57,12 +65,5 @@ export const ToDoService = {
     const index = items.findIndex(i => i.id === itemId)
     items.splice(index, 1)
     ToDoService.storeAll(items)
-  },
-  /**
-   * Stores all the provided todo items
-   * @param {TodoItem[]} items
-   */
-  storeAll (items) {
-    LocalStorageService.setItem(STORAGE_KEY, items)
   }
 }

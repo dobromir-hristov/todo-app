@@ -9,7 +9,7 @@
           <input
             type="checkbox"
             disabled
-            :value="!!item.completedAt"
+            :checked="!!item.completedAt"
           >
         </slot>
       </div>
@@ -34,10 +34,6 @@
 export default {
   name: 'BaseTodoItem',
   props: {
-    isEditable: {
-      type: Boolean,
-      default: false
-    },
     item: {
       type: Object,
       required: true

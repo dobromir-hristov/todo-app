@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseTodoItem renders the BaseTodoItem 1`] = `
+<div class="BaseTodoItem">
+  <div class="columns is-vcentered is-mobile">
+    <div class="column is-narrow"><input type="checkbox" disabled="disabled"></div>
+    <div class="column">
+      notDeleted
+    </div>
+    <div class="column is-narrow">
+      <div class="BaseTodoItem__actions"></div>
+    </div>
+  </div>
+</div>
+`;
