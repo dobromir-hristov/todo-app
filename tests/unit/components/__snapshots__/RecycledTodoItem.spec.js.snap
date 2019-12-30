@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecycledTodoItem renders the RecycledTodoItem 1`] = `
+<div class="BaseTodoItem RecycledTodoItem">
+  <div class="BaseTodoItem__checkbox"><input type="checkbox" disabled="disabled"></div>
+  <div class="BaseTodoItem__content">
+    notDeleted
+  </div>
+  <div class="BaseTodoItem__actions">
+    <div class="buttons"><button title="Restore from Trash" data-testid="restoreTrigger" class="button is-small is-inverted is-primary"><span class="icon"><span class="fa fa-history fa-lg"></span></span></button> <button title="Remove from Recycle Bin" data-testid="removeTrigger" class="button is-small is-inverted is-danger"><span class="icon"><span class="fa fa-trash fa-lg"></span></span></button></div>
+  </div>
+</div>
+`;

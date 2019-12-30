@@ -8,6 +8,7 @@
         <button
           class="button is-small is-inverted is-primary"
           title="Restore from Trash"
+          data-testid="restoreTrigger"
           @click="$emit('restore', item)"
         >
           <span class="icon">
@@ -17,6 +18,7 @@
         <button
           class="button is-small is-inverted is-danger"
           title="Remove from Recycle Bin"
+          data-testid="removeTrigger"
           @click="$emit('remove', item)"
         >
           <span class="icon">
