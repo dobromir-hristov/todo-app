@@ -24,6 +24,9 @@ module.exports = {
       ],
       env: {
         jest: true
+      },
+      globals: {
+        testid: false
       }
     }
   ]
