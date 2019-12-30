@@ -8,12 +8,14 @@
         v-model="completedLocal"
         type="checkbox"
         class="checkbox"
+        data-testid="completeCheckbox"
       >
     </template>
     <template #content>
       <div
         v-if="!isEditing"
         class="break-all"
+        data-testid="contentEditTrigger"
         @dblclick="enableEdit"
       >
         {{ item.content }}
@@ -24,6 +26,7 @@
         v-model="contentLocal"
         type="text"
         class="input"
+        data-testid="editInput"
         @keyup.enter="saveEdit"
         @blur="saveEdit"
         @keyup.esc="stopEdit"
@@ -32,6 +35,7 @@
     <template #actions>
       <button
         class="TodoItem__delete button is-inverted is-danger is-small"
+        data-testid="deleteTrigger"
         @click.prevent="deleteItem"
       >
         <span class="icon"><i class="fa fa-trash fa-lg" /></span>

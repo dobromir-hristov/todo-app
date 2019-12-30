@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem renders the TodoItem 1`] = `
+<div class="BaseTodoItem TodoItem">
+  <div class="BaseTodoItem__checkbox"><input type="checkbox" data-testid="completeCheckbox" class="checkbox"></div>
+  <div class="BaseTodoItem__content">
+    <div data-testid="contentEditTrigger" class="break-all">
+      notDeleted
+    </div>
+    <!---->
+  </div>
+  <div class="BaseTodoItem__actions"><button data-testid="deleteTrigger" class="TodoItem__delete button is-inverted is-danger is-small"><span class="icon"><i class="fa fa-trash fa-lg"></i></span></button>
+    <div class="TodoItem__reorderHandle"><i class="fa fa-bars"></i></div>
+  </div>
+</div>
+`;
