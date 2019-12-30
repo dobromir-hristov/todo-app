@@ -4,6 +4,6 @@
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/elements/container.sass";
 @import "~bulma/sass/elements/title.sass";
-@import "~bulma/sass/elements/other.sass";
-@import "~bulma/sass/form/_all.sass";
-@import "~bulma/sass/grid/columns";
+@import "~bulma/sass/form/shared.sass";
+@import "~bulma/sass/form/input-textarea.sass";
+@import "~bulma/sass/form/checkbox-radio.sass";

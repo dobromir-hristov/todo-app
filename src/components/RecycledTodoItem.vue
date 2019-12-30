@@ -6,7 +6,7 @@
     <template #actions>
       <div class="buttons">
         <button
-          class="button is-small is-primary"
+          class="button is-small is-inverted is-primary"
           title="Restore from Trash"
           @click="$emit('restore', item)"
         >
@@ -15,7 +15,7 @@
           </span>
         </button>
         <button
-          class="button is-small is-danger"
+          class="button is-small is-inverted is-danger"
           title="Remove from Recycle Bin"
           @click="$emit('remove', item)"
         >

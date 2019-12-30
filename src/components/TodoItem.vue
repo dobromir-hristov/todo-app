@@ -31,10 +31,10 @@
     </template>
     <template #actions>
       <button
-        class="TodoItem__delete delete has-background-danger"
+        class="TodoItem__delete button is-inverted is-danger is-small"
         @click.prevent="deleteItem"
       >
-        Remove
+        <span class="icon"><i class="fa fa-trash fa-lg" /></span>
       </button>
       <div class="TodoItem__reorderHandle">
         <i class="fa fa-bars" />
@@ -151,6 +151,7 @@ export default {
   &__delete {
     opacity: 0;
     margin-right: $theme--spacing-s;
+    border-radius: 100%;
   }
 
   &__reorderHandle {
